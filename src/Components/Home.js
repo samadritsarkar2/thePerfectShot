@@ -1,4 +1,5 @@
 import React from "react";
+import App from "../App";
 import Heading from "./Heading";
 import Nav from "./Nav";
 
@@ -12,6 +13,8 @@ const Home = () => {
             <Nav />
             <Heading />
             <p className="text-center" >Homepage</p>
+
+            <App  />
         </div>
     )
 
