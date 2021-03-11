@@ -1,12 +1,30 @@
+import react, {useEffect, useState} from "react"
 import logo from './logo.svg';
-
+import { fetchData } from "./Api/unsplashApi";
 
 function App() {
+  const [data, setData] = useState()
+  const preloadData = () => {
+    fetchData().then( data => {
+        if(data.error)
+        {
+          console.log(data.error)
+        } else {
+          setData(data)
+        }
+      }
+    )
+  }
+
+  useEffect(() => {
+    preloadData();
+  }, [])
+
   return (
     <div>
       
-       <p>Hello</p>
-      
+       <p>Hell ssdo</p>
+      <p> {JSON.stringify(data)} </p>
     </div>
   );
 }
