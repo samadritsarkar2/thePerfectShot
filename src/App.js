@@ -3,12 +3,14 @@ import logo from './logo.svg';
 import { fetchData } from "./Api/unsplashApi";
 
 function App() {
-  const [data, setData] = useState()
+  const [data, setData] = useState();
+
   const preloadData = () => {
     fetchData().then( data => {
-        if(data.error)
+      
+        if(data.errors)
         {
-          console.log(data.error)
+          console.log(data.errors)
         } else {
           setData(data)
         }
