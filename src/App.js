@@ -3,11 +3,11 @@ import logo from './logo.svg';
 import { fetchData } from "./Api/unsplashApi";
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   const preloadData = () => {
     fetchData().then( data => {
-      
+
         if(data.errors)
         {
           console.log(data.errors)
@@ -26,7 +26,20 @@ function App() {
     <div>
       
        <p>Hell ssdo</p>
-      <p> {JSON.stringify(data)} </p>
+      <p> Data</p>
+        <div className="container">
+          {/* <p>{JSON.stringify(typeof data)}</p> */}
+
+            {
+              data.map(item => {
+                return (
+                <img src={item.urls.regular} style={{ width : 100, height : 100 } } />
+                )
+              })
+              
+            }
+          
+        </div>
     </div>
   );
 }
