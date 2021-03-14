@@ -1,12 +1,21 @@
 import react, {useEffect, useState} from "react"
 import logo from './logo.svg';
-import { fetchData } from "./Api/unsplashApi";
+import { fetchPhotos, fetchData } from "./Api/unsplashApi";
 
 function App() {
   const [data, setData] = useState([]);
-
+  const [info, setInfo] = useState({})
   const preloadData = () => {
-    fetchData().then( data => {
+
+    fetchData().then((res) => {
+      if(res.errors)
+      {
+        console.log(res.errors)
+      } else {
+        setInfo(res)
+      } 
+
+      fetchPhotos().then( data => {
 
         if(data.errors)
         {
@@ -16,6 +25,9 @@ function App() {
         }
       }
     )
+    })
+
+    
   }
 
   useEffect(() => {
@@ -24,16 +36,15 @@ function App() {
 
   return (
     <div>
-      
-       <p>Hell ssdo</p>
-      <p> Data</p>
+    
         <div className="container">
-          {/* <p>{JSON.stringify(typeof data)}</p> */}
+          {/* <p>{JSON.stringify(info.title)}</p> */}
 
             {
               data.map(item => {
                 return (
-                <img src={item.urls.regular} style={{ width : 100, height : 100 } } />
+                
+                <img className="img-fluid" src={item.urls.regular}  />
                 )
               })
               

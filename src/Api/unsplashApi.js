@@ -3,9 +3,9 @@ import axios from "axios";
 
 const endpoint = `https://api.unsplash.com/topics/nature/photos?client_id=${process.env.REACT_APP_CLIENT_ID}`;
 
-export const fetchData = async () => {
+export const fetchPhotos = async () => {
     try {
-        const response = await axios.get(endpoint);
+        const response = await axios.get(`https://api.unsplash.com/topics/nature/photos?client_id=${process.env.REACT_APP_CLIENT_ID}`);
   
         return response.data;
         
@@ -15,9 +15,16 @@ export const fetchData = async () => {
         return err.response.data
     }
 
-
 }
 
+export const fetchData = async () => {
+    try {
+        const response = await axios.get(`https://api.unsplash.com/topics/nature?client_id=${process.env.REACT_APP_CLIENT_ID}`);
+        return response.data;
+    } catch (err) {
+        return err.response.data
+    }
+} 
 
 
 
