@@ -39,16 +39,25 @@ function App() {
     
         <div className="container">
           {/* <p>{JSON.stringify(info.title)}</p> */}
-
+          <div className="row">
+            <div className="card-group">
             {
               data.map(item => {
                 return (
-                
-                <img className="img-fluid" src={item.urls.regular}  />
+                  <div className="col-lg-4 col-md-6 col-sm-12">
+
+                  <div className="card h-50" >
+                    <img className="card-img-top img-thumbnail" src={item.urls.thumb} 
+                    
+                    />
+                  </div>
+
+                  </div>
                 )
               })
-              
             }
+              </div>
+          </div>
           
         </div>
     </div>
