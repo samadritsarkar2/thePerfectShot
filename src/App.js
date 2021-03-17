@@ -45,12 +45,17 @@ function App() {
               data.map(item => {
                 return (
                   <div className="col-lg-4 col-md-6 col-sm-12">
-
                   <div className="card h-50" >
                     <img 
                     className="card-img-top img-thumbnail" 
                     src={item.urls.thumb} 
                     />
+                    { item.description ? (
+                        <span className="lead">{ item.description }</span>
+                    ) : (
+                      <span className="lead">{ item.alt_description }</span>
+                    )  }
+                    
                   </div>
 
                   </div>
