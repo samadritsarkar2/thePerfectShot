@@ -1,5 +1,6 @@
 import react, {useEffect, useState} from "react"
 import logo from './logo.svg';
+import './App.css'
 import { fetchPhotos, fetchData } from "./Api/unsplashApi";
 
 function App() {
@@ -39,15 +40,15 @@ function App() {
     
         <div className="container">
           {/* <p>{JSON.stringify(info.title)}</p> */}
-          <div className="row">
-            <div className="card-group">
+          <div className="image-list" >
+            {/* <div className="card-group"> */}
             {
               data.map(item => {
                 return (
-                  <div className="col-lg-4 col-md-6 col-sm-12">
-                  <div className="card h-50" >
+                  // <div className="col-lg-4 col-md-6 col-sm-12">
+                  <div className="" style={{gridRowEnd : `span 50`}} >
                     <img 
-                    className="card-img-top img-thumbnail" 
+                    className="" 
                     src={item.urls.thumb} 
                     />
                     { item.description ? (
@@ -58,11 +59,11 @@ function App() {
                     
                   </div>
 
-                  </div>
+                  // </div>
                 )
               })
             }
-              </div>
+
           </div>
           
         </div>
