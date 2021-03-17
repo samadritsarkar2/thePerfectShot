@@ -50,12 +50,7 @@ function App() {
                     className="card-img-top img-thumbnail" 
                     src={item.urls.thumb} 
                     />
-                    { item.description ? (
-                        <span className="lead">{ item.description }</span>
-                    ) : (
-                      <span className="lead">{ item.alt_description }</span>
-                    )  }
-                    
+                  
                   </div>
 
                   </div>
