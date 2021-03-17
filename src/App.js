@@ -49,10 +49,10 @@ function App() {
                   <div className="card " >
                     <img 
                     style={{
-                      width : '20em',
-                      height : '20em'
+                      width : '20rem',
+                      height : '20rem'
                     }}
-                    className="" 
+                    className="img-thumbnail" 
                     src={item.urls.thumb} 
                     />
                     { item.description ? (
