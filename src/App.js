@@ -46,8 +46,12 @@ function App() {
               data.map(item => {
                 return (
                   <div className="col-lg-4 col-md-6 col-sm-12">
-                  <div className="card h-50" >
+                  <div className="card " >
                     <img 
+                    style={{
+                      width : '20em',
+                      height : '20em'
+                    }}
                     className="" 
                     src={item.urls.thumb} 
                     />
