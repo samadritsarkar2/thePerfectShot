@@ -40,13 +40,13 @@ function App() {
     
         <div className="container">
           {/* <p>{JSON.stringify(info.title)}</p> */}
-          <div className="image-list" >
-            {/* <div className="card-group"> */}
+          <div className="row image-list" >
+            <div className="card-group">
             {
               data.map(item => {
                 return (
-                  // <div className="col-lg-4 col-md-6 col-sm-12">
-                  <div className="" style={{gridRowEnd : `span 50`}} >
+                  <div className="col-lg-4 col-md-6 col-sm-12">
+                  <div className="card h-50" >
                     <img 
                     className="" 
                     src={item.urls.thumb} 
@@ -63,7 +63,7 @@ function App() {
                 )
               })
             }
-
+              </div>
           </div>
           
         </div>
