@@ -52,7 +52,7 @@ function App() {
                       width : '20rem',
                       height : '20rem'
                     }}
-                    className="" 
+                    className="img-thumbnail " 
                     src={item.urls.thumb} 
                     />
                     { item.description ? (
