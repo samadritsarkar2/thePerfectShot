@@ -2,7 +2,7 @@ import react from "react";
 
 const Footer = () => {
     return (
-        <div>
+        <div style={{position : "fixed", bottom : 0,}} >
             <p>Footer</p>
         </div>
     )
