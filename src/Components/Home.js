@@ -13,7 +13,7 @@ const Home = () => {
         <div className="container-fluid mt-2">
             <Nav />
             <Heading />
-            {/* <p className="text-center" >Homepage</p> */}
+          
 
             <App  />
             <Footer />
