@@ -40,35 +40,35 @@ function App() {
     
         <div className="container">
           {/* <p>{JSON.stringify(info.title)}</p> */}
-          <div className="row image-list" >
-            <div className="card-group">
+          <div className="row-images" >
             {
               data.map(item => {
                 return (
-                  <div className="col-lg-4 col-md-6 col-sm-12">
-                  <div className="card " >
-                    <img 
-                    style={{
-                      width : '20rem',
-                      height : '20rem'
-                    }}
-                    className="" 
-                    src={item.urls.thumb} 
-                    />
-                    { item.description ? (
-                        <span className="lead">{ item.description }</span>
-                    ) : (
-                      <span className="lead">{ item.alt_description }</span>
-                    )  }
-                    
+                  
+                  <div className="img"
+                  style={{
+                    backgroundImage : `url(${item.urls.thumb})`,
+                    backgroundSize : 'cover',
+                    width : '100%'
+                  }}
+                  >
+
                   </div>
 
-                 </div>
+
+                    // <img 
+                    // style={{
+                    //   width : '20rem',
+                    //   height : '20rem'
+                    // }}
+                    // className="" 
+                    
+                    // src={item.urls.thumb} 
+                    // />
                 )
               })
             }
               </div>
-          </div>
           
         </div>
     </div>

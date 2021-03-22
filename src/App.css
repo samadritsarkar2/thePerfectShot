@@ -1,0 +1,14 @@
+.row-images {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.img {
+    height: 50%;
+    margin: 10px;
+    box-shadow: 10px 14px 20px 0px rgba(226,204,189,1);
+  }
