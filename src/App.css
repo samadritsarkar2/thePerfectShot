@@ -1,15 +1,21 @@
 .row-images {
-    width: 80%;
+    width: 100%;
     height: 100%;
-    max-width: 1000px;
+
     margin: 10px 0;
     display: flex;
     flex-wrap: wrap;
 }
 
+.wrapper {
+    flex-grow: 1;
+    height: 40vh;
+}
+
 .img {
-    width : 33%;
-    height: 50%;
-    margin: 10px;
-    box-shadow: 10px 14px 20px 0px rgba(226,204,189,1);
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+   
   }

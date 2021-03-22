@@ -44,7 +44,8 @@ function App() {
             {
               data.map(item => {
                 return (
-      
+                  <div className="wrapper">
+
                     <img 
                     style={{
                       
@@ -53,6 +54,8 @@ function App() {
                     
                     src={item.urls.regular} 
                     />
+                    
+                  </div>
                 )
               })
             }
