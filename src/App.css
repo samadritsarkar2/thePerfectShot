@@ -1,5 +1,5 @@
 .row-images {
-    width: 100%;
+    width: 80%;
     height: 100%;
     max-width: 1000px;
     margin: 10px 0;
@@ -8,6 +8,7 @@
 }
 
 .img {
+    width : 33%;
     height: 50%;
     margin: 10px;
     box-shadow: 10px 14px 20px 0px rgba(226,204,189,1);

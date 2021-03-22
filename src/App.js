@@ -44,27 +44,15 @@ function App() {
             {
               data.map(item => {
                 return (
-                  
-                  <div className="img"
-                  style={{
-                    backgroundImage : `url(${item.urls.thumb})`,
-                    backgroundSize : 'cover',
-                    width : '100%'
-                  }}
-                  >
-
-                  </div>
-
-
-                    // <img 
-                    // style={{
-                    //   width : '20rem',
-                    //   height : '20rem'
-                    // }}
-                    // className="" 
+      
+                    <img 
+                    style={{
+                      
+                    }}
+                    className="img" 
                     
-                    // src={item.urls.thumb} 
-                    // />
+                    src={item.urls.regular} 
+                    />
                 )
               })
             }
