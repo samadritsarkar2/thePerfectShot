@@ -38,7 +38,7 @@ function App() {
   return (
     <div>
     
-        <div className="container">
+        <div className="container ">
           {/* <p>{JSON.stringify(info.title)}</p> */}
           <div className="row-images" >
             {
