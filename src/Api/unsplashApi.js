@@ -3,10 +3,10 @@ import axios from "axios";
 
 // const endpoint = `https://api.unsplash.com/topics/nature/photos?client_id=${process.env.REACT_APP_CLIENT_ID}`;
 
-export const fetchPhotos = async () => {
+export const fetchPhotos = async (pageNo) => {
     try {
-        const response = await axios.get(`https://api.unsplash.com/topics/nature/photos?client_id=${process.env.REACT_APP_CLIENT_ID}&per_page=15`);
-  
+        const response = await axios.get(`https://api.unsplash.com/topics/nature/photos?client_id=${process.env.REACT_APP_CLIENT_ID}&per_page=15&page=${pageNo}`);
+        console.log(pageNo)
         return response.data;
         
   

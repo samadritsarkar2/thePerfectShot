@@ -1,7 +1,8 @@
 import react, {useEffect, useState, useRef} from "react"
-import logo from './logo.svg';
 import './App.css'
 import { fetchPhotos, fetchData } from "./Api/unsplashApi";
+import InfiniteScroll from 'react-infinite-scroller';
+
 
 function App() {
   const [data, setData] = useState([]);
@@ -18,19 +19,33 @@ function App() {
         setInfo(res)
       } 
 
-      fetchPhotos().then( data => {
-        if(data.errors)
+      fetchPhotos(1).then( pics => {
+        if(pics.errors)
         {
-          console.log(data.errors)
+          console.log(pics.errors)
         } else {
-          setData(data)
-        }
+          setData(pics)
+          setPage(2);
+       }
       }
     )
 
     }) 
   }
-
+  const loadMore = () => {
+      fetchPhotos(page)
+      .then(pics => {
+        if(pics.errors)
+        {
+          console.log(pics.errors)
+        } else {
+        
+          setData(data => data.concat(pics));
+          setPage(page+1);
+        }
+      }
+    )
+  }
   useEffect(() => {
     preloadData();
   }, []);
@@ -38,12 +53,20 @@ function App() {
  
 
   return (
-    <div>
     
         <div className=" app-class ">
-          {/* <p>{JSON.stringify(info.title)}</p> */}
-      
+         
+      <InfiniteScroll
+        pageStart={page}
+        loadMore={()=> loadMore() }
+        hasMore={true || false}
+        loader={<div className="loader" key={0}>Loading ...</div>}
+        useWindow={false}
+        >
           <div className="row-images" >
+{/* 
+               <p>{JSON.stringify(info.title)}</p>
+                 <p>{JSON.stringify(data)}</p> */}
             {
               data.map(item => {
                 return (
@@ -55,7 +78,7 @@ function App() {
                     }}
                     className="img" 
                     
-                    src={item.urls.regular} 
+                    src={item.urls?.regular} 
                     />
                     
                   </div>
@@ -63,9 +86,8 @@ function App() {
               })
             }
               </div>
-        
+              </InfiniteScroll>
         </div>
-    </div>
   );
 }
 
