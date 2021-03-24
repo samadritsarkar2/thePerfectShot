@@ -95,7 +95,7 @@ const loadMore = () => {
               </div>
               </InfiniteScroll>
 
-              <Modal
+              {/* <Modal
               isOpen={selectedImg}
               onRequestClose={() => setSelectedImg(null)}
               style={{
@@ -110,7 +110,7 @@ const loadMore = () => {
               }}
               > 
                  <img style={{width : '100%', height : '100%' }} src={selectedImg?.url?.regular} />
-              </Modal>
+              </Modal> */}
         </div>
 
 
