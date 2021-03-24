@@ -60,8 +60,8 @@ function App() {
         pageStart={page}
         loadMore={()=> loadMore() }
         hasMore={true || false}
-        loader={<div className="loader" key={0}>Loading ...</div>}
-        useWindow={false}
+        loader={<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
+        useWindow={true}
         >
           <div className="row-images" >
 {/* 
