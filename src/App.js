@@ -2,7 +2,7 @@ import react, {useEffect, useState, useRef} from "react"
 import './App.css'
 import { fetchPhotos, fetchData } from "./Api/unsplashApi";
 import InfiniteScroll from 'react-infinite-scroller';
-import LazyLoad from 'react-lazyload';
+
 import Modal from "react-modal";
 
 function App() {
