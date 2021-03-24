@@ -7,7 +7,7 @@ const NavI = () => {
 
     return (
         <div className="container-fluid">
-            <Navbar  expand="lg">
+            {/* <Navbar  expand="lg">
                 <Navbar.Brand href="/"> <img src={logo} style={{height : 40, width : 40}} /> </Navbar.Brand>
                 <Form style={{width : '70%'}} inline>
                     <FormControl  type="text" 
@@ -15,29 +15,9 @@ const NavI = () => {
                         placeholder="Search free High Resolution Photos"
                         />
     </Form>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse  id="basic-navbar-nav">
-      <div className="container-fluid">
-    <Nav className="">
-        <Nav.Link href="#home">
-          <div className='btn btn-outline-dark' >
-            Submit a photo
-          </div> 
-        </Nav.Link>
-        <Nav.Link href="#">
-          <div className='btn' >
-            Login
-          </div> 
-        </Nav.Link>
-        <Nav.Link href="#">
-          <div className='btn btn-success' >
-            Join Free
-          </div> 
-        </Nav.Link>
-    </Nav>
-    </div>
-  </Navbar.Collapse>
-</Navbar>
+
+  
+</Navbar> */}
            
         </div>
     )

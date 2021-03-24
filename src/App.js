@@ -1,13 +1,15 @@
-import react, {useEffect, useState} from "react"
+import react, {useEffect, useState, useRef} from "react"
 import logo from './logo.svg';
 import './App.css'
 import { fetchPhotos, fetchData } from "./Api/unsplashApi";
 
 function App() {
   const [data, setData] = useState([]);
-  const [info, setInfo] = useState({})
-  const preloadData = () => {
+  const [info, setInfo] = useState({});
+  const [page, setPage] = useState(1);
 
+  // const myScroller = useRef();
+  const preloadData = () => {
     fetchData().then((res) => {
       if(res.errors)
       {
@@ -17,7 +19,6 @@ function App() {
       } 
 
       fetchPhotos().then( data => {
-
         if(data.errors)
         {
           console.log(data.errors)
@@ -26,20 +27,22 @@ function App() {
         }
       }
     )
-    })
 
-    
+    }) 
   }
 
   useEffect(() => {
     preloadData();
-  }, [])
+  }, []);
+
+ 
 
   return (
     <div>
     
         <div className=" app-class ">
           {/* <p>{JSON.stringify(info.title)}</p> */}
+      
           <div className="row-images" >
             {
               data.map(item => {
@@ -60,7 +63,7 @@ function App() {
               })
             }
               </div>
-          
+        
         </div>
     </div>
   );
