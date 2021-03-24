@@ -2,12 +2,14 @@ import react, {useEffect, useState, useRef} from "react"
 import './App.css'
 import { fetchPhotos, fetchData } from "./Api/unsplashApi";
 import InfiniteScroll from 'react-infinite-scroller';
-
+import LazyLoad from 'react-lazyload';
+import Modal from "react-modal";
 
 function App() {
   const [data, setData] = useState([]);
   const [info, setInfo] = useState({});
   const [page, setPage] = useState(1);
+  const [selectedImg, setSelectedImg] = useState(null)
 
   // const myScroller = useRef();
   const preloadData = () => {
@@ -32,7 +34,8 @@ function App() {
 
     }) 
   }
-  const loadMore = () => {
+
+const loadMore = () => {
       fetchPhotos(page)
       .then(pics => {
         if(pics.errors)
@@ -46,6 +49,13 @@ function App() {
       }
     )
   }
+
+  const handleImageClick = (img) => {
+    setSelectedImg(img);
+    console.log(selectedImg);
+  }
+
+
   useEffect(() => {
     preloadData();
   }, []);
@@ -64,30 +74,46 @@ function App() {
         useWindow={true}
         >
           <div className="row-images" >
-{/* 
-               <p>{JSON.stringify(info.title)}</p>
-                 <p>{JSON.stringify(data)}</p> */}
             {
               data.map(item => {
                 return (
                   <div className="wrapper" key={item.id}>
-
+             
                     <img 
                     style={{
                       
                     }}
                     className="img" 
-                    
                     src={item.urls?.regular} 
+                    onClick={() => handleImageClick(item)}
                     />
-                    
+              
                   </div>
                 )
               })
             }
               </div>
               </InfiniteScroll>
+
+              <Modal
+              isOpen={selectedImg}
+              onRequestClose={() => setSelectedImg(null)}
+              style={{
+                content : {
+                  top                   : '50%',
+                  left                  : '50%',
+                  right                 : 'auto',
+                  bottom                : 'auto',
+                  marginRight           : '-50%',
+                  transform             : 'translate(-50%, -50%)'
+                }
+              }}
+              > 
+                 <img style={{width : '100%', height : '100%' }} src={selectedImg?.url?.regular} />
+              </Modal>
         </div>
+
+
   );
 }
 
