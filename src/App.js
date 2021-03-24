@@ -70,7 +70,7 @@ function App() {
             {
               data.map(item => {
                 return (
-                  <div className="wrapper">
+                  <div className="wrapper" key={item.id}>
 
                     <img 
                     style={{
