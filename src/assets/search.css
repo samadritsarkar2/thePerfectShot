@@ -1,13 +1,30 @@
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 .search-wrapper{
 
     margin: auto;
-    width: 80%;
+    width: auto;
     text-align: center;
+    
 }
 
 
 .input-box {
-    width: 69%;
+    width: 80%;
     padding: 12px 20px;
+    font-size: 1.25rem;
+    border: solid 2px black;
+    /* border-radius: 1.5em; */
+    outline: none;
+    font-family: Montserrat;
+    box-shadow: 3px 6px 4px 0 rgba(0, 0, 0 , .3);
+}
+
+/* .input-box:focus {
+
+} */
+
+.search-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
 }
