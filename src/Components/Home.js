@@ -13,7 +13,6 @@ const Home = () => {
 
     return (
         <div className="container-fluid mt-2">
-            <Nav />
             <div className=" row search-area" >
             <Search />
             </div>

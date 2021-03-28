@@ -6,7 +6,7 @@ const NavI = () => {
 
 
     return (
-        <div className="container">
+        <div className="container mt-2">
             
             <div className="header--class">
                 <span className="img-logo-wrapper">
