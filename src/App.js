@@ -1,20 +1,22 @@
 import react, {useEffect, useState, useRef} from "react"
 import "./assets/App.css"
-import { fetchPhotos, fetchData } from "./Api/unsplashApi";
+import { fetchNature, searchUnsplash } from "./Api/unsplashApi";
 import InfiniteScroll from 'react-infinite-scroller';
 
 import Modal from "react-modal";
 
-function App() {
+const App = ({location}) => {
   const [data, setData] = useState([]);
-  const [info, setInfo] = useState({});
+  const [info, setInfo] = useState(location.query.search);
   const [page, setPage] = useState(1);
-  const [selectedImg, setSelectedImg] = useState(null)
+  const [selectedImg, setSelectedImg] = useState(null);
 
+  // console.log(info)
   // const myScroller = useRef();
+
   const preloadData = () => {
 
-      fetchPhotos(1).then( pics => {
+    searchUnsplash(location.query.search, 1).then( pics => {
         if(pics.errors)
         {
           console.log(pics.errors)
@@ -24,12 +26,12 @@ function App() {
        }
       }
     )
-
+    
     
   }
 
 const loadMore = () => {
-      fetchPhotos(page)
+  searchUnsplash(location.query.search, page)
       .then(pics => {
         if(pics.errors)
         {

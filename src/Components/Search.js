@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "../assets/search.css";
-import {ReactComponent as Logo} from "../assets/search-svgrepo-com.svg"
+import {ReactComponent as Logo} from "../assets/search-svgrepo-com.svg";
+import {searchUnsplash} from "../Api/unsplashApi";
+import { Link } from "react-router-dom";
+
+
 const Search = () => {
 
     const [search, setSearch] = useState("");
     
     const handleSubmit = () => {
-        let doesNothing;
+        
     }
 
     return (
@@ -18,7 +22,16 @@ const Search = () => {
                 value={search}
                 onChange={(e)=> setSearch(e.target.value)}
              /> 
+             <Link
+                to={{
+                    pathname : '/search',
+                    query : {
+                        search
+                    }
+                }}
+             >
             <Logo className="search-logo" onClick={handleSubmit} />
+            </Link>
             </div>
             
         </div>
