@@ -16,12 +16,19 @@
     /* border-radius: 1.5em; */
     outline: none;
     font-family: Montserrat;
-    box-shadow: 3px 6px 4px 0 rgba(0, 0, 0 , .3);
+    box-shadow: 3px 6px 3px 3px rgba(0, 0, 0 , .2);
+    transition: all 0.3s ease;
 }
 
-/* .input-box:focus {
 
-} */
+.input-box:hover  {
+    box-shadow: 3px 6px 4px 3px rgba(0, 0, 0 , .3);
+}
+
+.input-box:focus  {
+    box-shadow: 3px 6px 4px 3px rgba(0, 0, 0 , .3);
+}
+
 
 .search-logo {
     width: 2.5rem;
