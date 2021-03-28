@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Heading from "./Heading";
 import Nav from "./Nav";
 import Search from "./Search";
+import Random from "./Random";
 import "../assets/search.css";
 
 
@@ -18,7 +19,8 @@ const Home = () => {
             </div>
          
             <Heading /> 
-            <App fetch="Random" />
+            {/* <App fetch="Random" /> */}
+            <Random />
             <Footer />
         </div>
     )
