@@ -1,5 +1,5 @@
 import react, {useEffect, useState, useRef} from "react"
-import '../App.css'
+import  "../assets/App.css";
 import { fetchRandom , fetchData } from "../Api/unsplashApi";
 import InfiniteScroll from 'react-infinite-scroller';
 

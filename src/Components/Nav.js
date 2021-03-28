@@ -1,6 +1,6 @@
 import react from "react";
 import logo from "../assets/Unsplash_Symbol.png";   
-import { Nav, Navbar, Form, FormControl } from "react-bootstrap";
+
 
 const NavI = () => {
 
