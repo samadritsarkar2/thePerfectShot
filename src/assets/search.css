@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.search-area{
+    margin-top: 10rem;
+    height: 20rem;
+
+}
+
+
+
 .search-wrapper{
 
     margin: auto;
@@ -9,7 +18,7 @@
 
 
 .input-box {
-    width: 80%;
+    width: 69%;
     padding: 12px 20px;
     font-size: 1.25rem;
     border: solid 2px black;
@@ -35,3 +44,4 @@
     height: 2.5rem;
     margin-left: 1rem;
 }
+

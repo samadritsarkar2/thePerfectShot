@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Heading from "./Heading";
 import Nav from "./Nav";
 import Search from "./Search";
-
+import "../assets/search.css";
 
 
 const Home = () => {
@@ -13,10 +13,11 @@ const Home = () => {
     return (
         <div className="container-fluid mt-2">
             <Nav />
+            <div className=" row search-area" >
             <Search />
-            <Heading />
-          
-
+            </div>
+         
+            <Heading /> 
             <App  />
             <Footer />
         </div>

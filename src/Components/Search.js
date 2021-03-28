@@ -10,7 +10,7 @@ const Search = () => {
     }
 
     return (
-        <div className="container">
+        <div className="">
             <div className="search-wrapper">
              <input 
                 className="input-box"
