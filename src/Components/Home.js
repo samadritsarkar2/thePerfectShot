@@ -18,7 +18,7 @@ const Home = () => {
             </div>
          
             <Heading /> 
-            <App  />
+            <App fetch="Random" />
             <Footer />
         </div>
     )

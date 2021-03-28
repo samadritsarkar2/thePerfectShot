@@ -13,13 +13,6 @@ function App() {
 
   // const myScroller = useRef();
   const preloadData = () => {
-    fetchData().then((res) => {
-      if(res.errors)
-      {
-        console.log(res.errors)
-      } else {
-        setInfo(res)
-      } 
 
       fetchPhotos(1).then( pics => {
         if(pics.errors)
@@ -32,7 +25,7 @@ function App() {
       }
     )
 
-    }) 
+    
   }
 
 const loadMore = () => {
