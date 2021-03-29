@@ -10,6 +10,7 @@ const App = ({location}) => {
   const [info, setInfo] = useState(location.query.search);
   const [page, setPage] = useState(1);
   const [selectedImg, setSelectedImg] = useState(null);
+  const [error, setError] = useState(false);
 
   // console.log(info)
   // const myScroller = useRef();
@@ -17,9 +18,10 @@ const App = ({location}) => {
   const preloadData = () => {
 
     searchUnsplash(location.query.search, 1).then( pics => {
-        if(pics.errors)
+        if(pics.errors || pics.length ==0)
         {
-          console.log(pics.errors)
+          setError(true);
+          console.log(pics.length, error)
         } else {
           setData(pics)
           setPage(2);
@@ -33,8 +35,10 @@ const App = ({location}) => {
 const loadMore = () => {
   searchUnsplash(location.query.search, page)
       .then(pics => {
-        if(pics.errors)
         {
+          if(pics.errors || pics.length ==0)
+        {
+          setError(true);
           console.log(pics.errors)
         } else {
         
@@ -42,7 +46,7 @@ const loadMore = () => {
           setPage(page+1);
         }
       }
-    )
+    })
   }
 
   const handleImageClick = (img) => {
@@ -61,34 +65,48 @@ const loadMore = () => {
     
         <div className=" app-class ">
          
-      <InfiniteScroll
-        pageStart={page}
-        loadMore={()=> loadMore() }
-        hasMore={true || false}
-        loader={<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
-        useWindow={true}
-        >
-          <div className="row-images" >
-            {
-              data.map(item => {
-                return (
-                  <div className="wrapper" key={item.id}>
-             
-                    <img 
-                    style={{
-                      
-                    }}
-                    className="img" 
-                    src={item.urls?.regular} 
-                    onClick={() => handleImageClick(item)}
-                    />
-              
+        {
+          error ? (
+            <div style={{
+              textAlign : 'center',
+              marginTop : '10%'
+            }}> 
+              <p style={{fontSize : '3rem'}}>Error Occured</p>
+              <p>Please, go Back</p>
+            </div>
+          ) : 
+          (
+            <InfiniteScroll
+            pageStart={page}
+            loadMore={()=> loadMore() }
+            hasMore={true || false}
+            loader={<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
+            useWindow={true}
+            >
+              <div className="row-images" >
+                {
+                  data.map(item => {
+                    return (
+                      <div className="wrapper" key={item.id}>
+                 
+                        <img 
+                        style={{
+                          
+                        }}
+                        className="img" 
+                        src={item.urls?.regular} 
+                        onClick={() => handleImageClick(item)}
+                        />
+                  
+                      </div>
+                    )
+                  })
+                }
                   </div>
-                )
-              })
-            }
-              </div>
               </InfiniteScroll>
+            
+          )
+        }
 
               {/* <Modal
               isOpen={selectedImg}

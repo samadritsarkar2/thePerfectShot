@@ -63,7 +63,7 @@ const loadMore = () => {
         pageStart={page}
         loadMore={()=> loadMore() }
         hasMore={true || false}
-        loader={<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
+        loader={<div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
         useWindow={true}
         >
           <div className="row-images" >

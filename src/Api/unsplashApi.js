@@ -50,7 +50,7 @@ export const searchUnsplash = async (query, pageNo) => {
         
   
     } catch (err) {
-        
+        //console.log(err)
         return err.response?.data
     }
 
