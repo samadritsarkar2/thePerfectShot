@@ -2,12 +2,14 @@ import react, {useEffect, useState, useRef} from "react"
 import "./assets/App.css"
 import { fetchNature, searchUnsplash } from "./Api/unsplashApi";
 import InfiniteScroll from 'react-infinite-scroller';
+import {ReactComponent as LeftArrow} from "./assets/left-arrow.svg";
 
 import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 const App = ({location}) => {
   const [data, setData] = useState([]);
-  const [info, setInfo] = useState(location.query.search);
+ const [info, setInfo] = useState('');
   const [page, setPage] = useState(1);
   const [selectedImg, setSelectedImg] = useState(null);
   const [error, setError] = useState(false);
@@ -16,8 +18,8 @@ const App = ({location}) => {
   // const myScroller = useRef();
 
   const preloadData = () => {
-
-    searchUnsplash(location.query.search, 1).then( pics => {
+    if(location.query?.search || location.query?.search !== '' )
+   { searchUnsplash(location.query?.search, 1).then( pics => {
         if(pics.errors || pics.length ==0)
         {
           setError(true);
@@ -25,15 +27,19 @@ const App = ({location}) => {
         } else {
           setData(pics)
           setPage(2);
+         
        }
       }
     )
+  } else {
+    setError(true);
+  }
     
     
   }
 
 const loadMore = () => {
-  searchUnsplash(location.query.search, page)
+  searchUnsplash(location.query?.search, page)
       .then(pics => {
         {
           if(pics.errors || pics.length ==0)
@@ -67,12 +73,20 @@ const loadMore = () => {
          
         {
           error ? (
-            <div style={{
-              textAlign : 'center',
-              marginTop : '10%'
-            }}> 
-              <p style={{fontSize : '3rem'}}>Error Occured</p>
-              <p>Please, go Back</p>
+            <div 
+            className="error-div"
+            > 
+              <p style={{fontSize : '3rem'}}>Ooops !</p>
+              <p>Please, try searching for something else</p>
+
+            <Link to="/" 
+            
+            >
+              <div className="back-btn" >
+                 <LeftArrow className="left-svg" /> 
+                 <p className="back-text">Go Back</p>
+                  </div>
+            </Link>
             </div>
           ) : 
           (

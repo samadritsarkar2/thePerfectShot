@@ -129,3 +129,41 @@ body {
   }
   
 
+.error-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+ 
+}
+
+.back-btn {
+   display: flex;
+  flex: 2;
+  width: 15rem ;
+  align-self: center;
+ 
+  background-color: whitesmoke;
+  border-radius: 2.5rem;
+  
+}
+
+a {
+  color: inherit;
+  text-decoration-line: none;
+}
+
+.left-svg {
+  
+  height: 5rem;
+  width: 5rem;
+  border-radius: 2.5rem;
+  align-self: flex-start;
+}
+.back-text {
+  font-family: Tahoma;
+  font-size: 2rem;
+  justify-self: center;
+  margin: 1rem 0.75rem;
+
+}
