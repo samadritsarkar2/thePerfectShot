@@ -6,7 +6,7 @@
 
 Single Page Application(SPA) built with React.Js and Unsplash.com API. 
 <br>
-It fetches images and searches from the API and displays it in the minimilastic UI.
+It fetches images and searches from the API and displays it in the minimilistic UI.
 
 <a href="https://theperfectshot.netlify.app/" > Live Preview </a>
 
