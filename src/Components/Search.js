@@ -33,7 +33,14 @@ const Search = () => {
             <Logo className="search-logo" onClick={handleSubmit} />
             </Link>
             </div>
-            
+            <div className="info-panel">
+                <p>
+                    Try searching something <span role="img" aria-label="up">👆</span>
+                </p>
+                <p>
+                    Works on <a href="https://api.unsplash.com/" target="_" >Unsplash.com's</a> API
+                </p>
+            </div>
         </div>
     )
 }

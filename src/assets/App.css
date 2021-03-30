@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
 body {
-    height: 100%;
+  height: 100%;
+  font-family: "Open Sans";
 }
 
-.header--class{
+.header--class {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -17,7 +20,6 @@ body {
   height: 3rem;
 }
 
-
 .app-class {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -26,126 +28,119 @@ body {
   overflow:auto; */
 }
 
-
 .row-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap : 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }
-@media only screen and (max-width : 820px) {
+@media only screen and (max-width: 820px) {
   .row-images {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap : 10px;
-}
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 }
 
-@media only screen and (max-width : 500px) {
+@media only screen and (max-width: 500px) {
   .row-images {
     display: grid;
-    grid-template-columns: 1fr ;
-    gap : 10px;
-}
-
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 .wrapper {
-    overflow: hidden;
-    height: 0;
-    padding: 50% 0;
-    /* padding controls height, will always be perfectly square regardless of width */
-    position: relative;
-   
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  /* padding controls height, will always be perfectly square regardless of width */
+  position: relative;
 
-    /* margin: 0.2rem; */
+  /* margin: 0.2rem; */
 }
 
 .img {
-    min-width: 50%;
-    min-height: 100%;
-    max-width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-   
-  }
+  min-width: 50%;
+  min-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 /* Loading */
-  .lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    
-   left: 50%;
-    width: 80px;
-    height: 80px;
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+
+  left: 50%;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #000;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
   }
-  .lds-ellipsis div {
-    position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: #000;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  100% {
+    transform: scale(1);
   }
-  .lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
   }
-  .lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
+  100% {
+    transform: scale(0);
   }
-  .lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
   }
-  .lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
+  100% {
+    transform: translate(24px, 0);
   }
-  @keyframes lds-ellipsis1 {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
-    }
-  }
-  
+}
 
 .error-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
- 
 }
 
 .back-btn {
-   display: flex;
+  display: flex;
   flex: 2;
-  width: 15rem ;
+  width: 15rem;
   align-self: center;
- 
+
   background-color: whitesmoke;
   border-radius: 2.5rem;
-  
 }
 
 a {
@@ -154,7 +149,6 @@ a {
 }
 
 .left-svg {
-  
   height: 5rem;
   width: 5rem;
   border-radius: 2.5rem;
@@ -165,5 +159,31 @@ a {
   font-size: 2rem;
   justify-self: center;
   margin: 1rem 0.75rem;
+}
 
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
 }
