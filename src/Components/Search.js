@@ -38,7 +38,10 @@ const Search = () => {
                     Try searching something <span role="img" aria-label="up">👆</span>
                 </p>
                 <p>
-                    Works on <a href="https://api.unsplash.com/" target="_" >Unsplash.com's</a> API
+                    Built on React.  Works on <a href="https://api.unsplash.com/" target="_" >Unsplash.com's</a> API
+                </p>
+                <p>
+                   <a href="https://github.com/samadritsarkar2/thePerfectShot" target="_" >View Sourcecode on Github</a>
                 </p>
             </div>
         </div>

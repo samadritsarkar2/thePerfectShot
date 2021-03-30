@@ -13,10 +13,10 @@ const NavI = () => {
           </span>
         </Link>
 
-        <h1 style={{ fontWeight: "bold" }}>Image Search App</h1>
+        <h1 style={{ fontWeight: "bold" }}>The Perfect Shot</h1>
       </div>
       <a
-        href="https://github.com/samadritsarkar2/imageSearchApp"
+        href="https://github.com/samadritsarkar2/thePerfectShot"
         className="github-corner"
         aria-label="View source on GitHub"
         target="_"
