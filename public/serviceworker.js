@@ -95,8 +95,8 @@ this.addEventListener("fetch", (event) => {
                 fetch(requestUrl)
             })
         )
-        event.
-    } else {
         
+    } else {
+        let donothing;
     }
 }) 
