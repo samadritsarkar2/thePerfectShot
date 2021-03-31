@@ -3,7 +3,6 @@ import  "../assets/App.css";
 import { fetchRandom , fetchData } from "../Api/unsplashApi";
 import InfiniteScroll from 'react-infinite-scroller';
 
-import Modal from "react-modal";
 
 function Random() {
   const [data, setData] = useState([]);

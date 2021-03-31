@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Components/Home';
 import Routes from './Routes';
+import swDev from "./swDev";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,3 +14,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+swDev();

@@ -3,8 +3,6 @@ import "./assets/App.css"
 import { fetchNature, searchUnsplash } from "./Api/unsplashApi";
 import InfiniteScroll from 'react-infinite-scroller';
 import {ReactComponent as LeftArrow} from "./assets/left-arrow.svg";
-
-import Modal from "react-modal";
 import { Link } from "react-router-dom";
 
 const App = ({location}) => {
