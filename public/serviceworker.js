@@ -51,7 +51,7 @@
 
 console.warn("public sw");
 
-let cacheData = "thePerfectShot_v1";
+let cacheData = "thePerfectShotv1";
 this.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(cacheData).then((cache) => {
