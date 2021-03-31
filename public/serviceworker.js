@@ -56,12 +56,14 @@ this.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(cacheData).then((cache) => {
             cache.addAll([
-                '/static/js/main.chunk.js',
-                '/static/js/0.chunk.js',
+                '/static/js/2.11f2d4a6.chunk.js',
+                '/static/js/main.262f3b3e.chunk.js',
                 '/static/js/bundle.js',
-                '/static/js/vendors~main.chunk.js',
-                '/static/css/main.chunk.css',
+                '/manifest.json',
+                '/static/css/main.a5d7234d.chunk.css',
                 '/bootstrap.min.css',
+                '/android/android-launchericon-144-144.png',
+                '/Unsplash_Symbol.png',
                 '/index.html',
                 '/',
             ])
