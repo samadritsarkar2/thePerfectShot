@@ -2,14 +2,24 @@ import React, { useState } from "react";
 import "../assets/search.css";
 import {ReactComponent as Logo} from "../assets/search-svgrepo-com.svg";
 import {searchUnsplash} from "../Api/unsplashApi";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 
 const Search = () => {
 
     const [search, setSearch] = useState("");
+    const history = useHistory();
     
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        const location = {
+            pathname : '/search',
+            query : {
+                search
+            }
+        }
+        if(e.charCode === 13){
+            return history.push(location)
+        }
         
     }
 
@@ -21,6 +31,7 @@ const Search = () => {
                 type="text"
                 value={search}
                 onChange={(e)=> setSearch(e.target.value)}
+                onKeyPress={handleSubmit}  
              /> 
              <Link
                 to={{
@@ -30,7 +41,7 @@ const Search = () => {
                     }
                 }}
              >
-            <Logo className="search-logo" onClick={handleSubmit} />
+            <Logo className="search-logo" />
             </Link>
             </div>
             <div className="info-panel">
