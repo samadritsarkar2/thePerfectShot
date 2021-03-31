@@ -23,7 +23,13 @@ self.addEventListener('install', (event) => {
             .then((cache) => {
                 console.log('Opened cache');
 
-                return cache.addAll(urlsToCache);
+                return cache.addAll(urlsToCache)
+                        .catch((err)=> {
+                        console.log("error occured", err)
+                        })
+            })
+            .catch((err)=> {
+                console.log("error occured", err)
             })
     )
 });
@@ -35,6 +41,9 @@ self.addEventListener('fetch', (event) => {
             .then(() => {
                 return fetch(event.request) 
                     .catch(() => caches.match('offline.html'))
+            })
+            .catch((err)=> {
+                console.log("error occured", err)
             })
     )
 });
