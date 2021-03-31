@@ -63,7 +63,7 @@ const urlsToCache = [
 
 this.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME)
+        caches.open(cacheData)
             .then((cache) => {
                 console.log('Opened cache');
 
@@ -101,7 +101,7 @@ this.addEventListener("fetch", (event) => {
     } else {
         console.log('Fetch failed; returning offline page instead.', error);
 
-        const cache =  caches.open(CACHE_NAME);
+        const cache =  caches.open(cacheData);
         const cachedResponse =  cache.match("/");
         return cachedResponse;
     }
