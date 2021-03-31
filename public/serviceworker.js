@@ -1,15 +1,10 @@
 // var CACHE_NAME = 'thePerfectShot_v1';
-// const urlsToCache = [
-//     "/",
-//     ""
-//   "index.html",
-//   "offline.html"
-// ]
+
 
 
 // const self = this;
 
-// // Install SW
+// Install SW
 // self.addEventListener('install', (event) => {
 //     event.waitUntil(
 //         caches.open(CACHE_NAME)
@@ -52,24 +47,33 @@
 console.warn("public sw");
 
 let cacheData = "thePerfectShotv1";
-this.addEventListener("install", (event) => {
+
+const urlsToCache = [
+    '/static/js/2.11f2d4a6.chunk.js',
+    '/static/js/main.262f3b3e.chunk.js',
+    '/static/js/bundle.js',
+    '/manifest.json',
+    '/static/css/main.a5d7234d.chunk.css',
+    '/bootstrap.min.css',
+    '/android/android-launchericon-144-144.png',
+    '/Unsplash_Symbol.png',
+    '/index.html',
+    '/',
+]
+
+this.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(cacheData).then((cache) => {
-            cache.addAll([
-                '/static/js/2.11f2d4a6.chunk.js',
-                '/static/js/main.262f3b3e.chunk.js',
-                '/static/js/bundle.js',
-                '/manifest.json',
-                '/static/css/main.a5d7234d.chunk.css',
-                '/bootstrap.min.css',
-                '/android/android-launchericon-144-144.png',
-                '/Unsplash_Symbol.png',
-                '/index.html',
-                '/',
-            ])
-        })
+        caches.open(CACHE_NAME)
+            .then((cache) => {
+                console.log('Opened cache');
+
+                return cache.addAll(urlsToCache).catch((err)=> {
+                    console.log(err)
+                })
+            })
     )
-})
+});
+
 
 this.addEventListener("fetch", (event) => {
 
@@ -95,6 +99,10 @@ this.addEventListener("fetch", (event) => {
             })
         )
     } else {
-        
+        console.log('Fetch failed; returning offline page instead.', error);
+
+        const cache = await caches.open(CACHE_NAME);
+        const cachedResponse = await cache.match("/");
+        return cachedResponse;
     }
 }) 
