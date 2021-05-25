@@ -19,7 +19,7 @@ const Home = () => {
          
             <Heading /> 
             {/* <App fetch="Random" /> */}
-            <Random />
+            {/* <Random /> */}
             <Footer />
         </div>
     )
